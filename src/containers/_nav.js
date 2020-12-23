@@ -34,6 +34,17 @@ export default [
       },
       {
         _name: 'CSidebarNavDropdown',
+        name: 'Teachers',
+        icon: 'cil-pencil',
+        items: [
+          {
+            name: 'List',
+            to: '/teachers'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
         name: 'Base',
         route: '/base',
         icon: 'cil-puzzle',
