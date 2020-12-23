@@ -40,6 +40,7 @@ export default {
     return {
       items: this.teachers,
       fields: [
+        { key: 'id' },
         { key: 'fullName', label: 'Name', _classes: 'font-weight-bold' },
         { key: 'email' },
         { key: 'gender' },
@@ -69,7 +70,7 @@ export default {
       }
     },
     rowClicked (item, index) {
-      this.$router.push({path: `users/${index + 1}`})
+      this.$router.push({path: `teachers/${this.teachers[index].id}`})
     },
     pageChange (val) {
       this.$router.push({ query: { page: val }})
