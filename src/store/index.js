@@ -9,7 +9,8 @@ export default new Vuex.Store({
   state: {
     sidebarShow: 'responsive',
     sidebarMinimize: false,
-    teachers: []
+    teachers: [],
+    subjects: []
   },
   mutations: {
     toggleSidebarDesktop (state) {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     SET_TEACHERS (state, payload) {
       state.teachers = payload
+    },
+    SET_SUBJECTS (state, payload) {
+      state.subjects = payload
     }
   },
   actions: {
@@ -55,6 +59,22 @@ export default new Vuex.Store({
       .then(({data}) => {
         context.commit('SET_TEACHERS', data)
         // console.log(data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    },
+    fetchSubjects (context, payload) {
+      axios({
+        method: 'GET',
+        url: '/subjects',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+      .then(({data}) => {
+        context.commit('SET_SUBJECTS', data)
+        console.log(data);
       })
       .catch(err => {
         console.log(err);

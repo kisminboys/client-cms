@@ -59,8 +59,15 @@ const User = () => import('@/views/users/User')
 
 // new path import below
 
+// Teachers
 const Teachers = () => import('@/views/Teachers/Teachers')
 const Teacher = () => import('@/views/Teachers/Teacher')
+// Students
+
+
+// Subjects
+const Subjects = () => import('@/views/Subjects/Subjects')
+const Subject = () => import('@/views/Subjects/Subject')
 
 
 
@@ -125,7 +132,23 @@ function configRoutes () {
         {
           path: 'subjects',
           name: 'Subjects',
-          // component:
+          component: {
+            render (c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Subjects',
+              component: Subjects
+            },
+            {
+              path: ':id',
+              name: 'Subject',
+              component: Subject
+            }
+          ]
         },
         {
           path: 'classrooms',
