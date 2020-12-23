@@ -12,19 +12,20 @@
                   <CInput
                     placeholder="Username"
                     autocomplete="username email"
+                    v-model="email"
                   >
                     <template #prepend-content><CIcon name="cil-user"/></template>
                   </CInput>
                   <CInput
                     placeholder="Password"
                     type="password"
-                    autocomplete="curent-password"
+                    v-model="password"
                   >
                     <template #prepend-content><CIcon name="cil-lock-locked"/></template>
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton color="primary" class="px-4">Login</CButton>
+                      <CButton @click.prevent="doLogin" color="primary" class="px-4">Login</CButton>
                     </CCol>
                     <CCol col="6" class="text-right">
                       <CButton color="link" class="px-0">Forgot password?</CButton>
@@ -46,7 +47,7 @@
                 <CButton
                   color="light"
                   variant="outline"
-                  size="lg"
+                  size="lg" @submit.prevent="doLogin"
                 >
                   Register Now!
                 </CButton>
@@ -64,6 +65,22 @@ export default {
   name: 'Login',
   created () {
     console.log(this.$router.history.current)
+  },
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    doLogin () {
+      const payload = {
+        email: this.email,
+        password: this.password
+      }
+      // console.log(payload)
+      this.$store.dispatch('login', payload)
+    }
   }
 }
 </script>
