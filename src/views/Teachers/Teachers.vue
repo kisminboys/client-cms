@@ -9,9 +9,9 @@
           <CDataTable
             hover
             striped
-            :items="items"
+            :items="teachers"
             :fields="fields"
-            :items-per-page="5"
+            :items-per-page="3"
             clickable-rows
             :active-page="activePage"
             @row-clicked="rowClicked"
@@ -38,12 +38,12 @@ export default {
   name: 'Users',
   data () {
     return {
-      items: usersData,
+      items: this.teachers,
       fields: [
-        { key: 'username', label: 'Name', _classes: 'font-weight-bold' },
-        { key: 'registered' },
-        { key: 'role' },
-        { key: 'status' }
+        { key: 'fullName', label: 'Name', _classes: 'font-weight-bold' },
+        { key: 'email' },
+        { key: 'gender' },
+        { key: 'birthDate' }
       ],
       activePage: 1
     }
@@ -73,6 +73,14 @@ export default {
     },
     pageChange (val) {
       this.$router.push({ query: { page: val }})
+    }
+  },
+  created () {
+    this.$store.dispatch('fetchTeachers')
+  },
+  computed: {
+    teachers () {
+      return this.$store.state.teachers
     }
   }
 }

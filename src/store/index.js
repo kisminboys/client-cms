@@ -8,7 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     sidebarShow: 'responsive',
-    sidebarMinimize: false
+    sidebarMinimize: false,
+    teachers: []
   },
   mutations: {
     toggleSidebarDesktop (state) {
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     },
     set (state, [variable, value]) {
       state[variable] = value
+    },
+    SET_TEACHERS (state, payload) {
+      state.teachers = payload
     }
   },
   actions: {
@@ -39,7 +43,23 @@ export default new Vuex.Store({
         .catch(err => {
           console.log(err)
         })
-    }
+    },
+    fetchTeachers (context, payload) {
+      axios({
+        method: 'get',
+        url: '/teachers',
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+      .then(({data}) => {
+        context.commit('SET_TEACHERS', data)
+        // console.log(data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    } 
   },
   modules: {
   }
