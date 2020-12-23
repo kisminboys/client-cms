@@ -18,33 +18,8 @@
               </div>
             </CCardHeader>
             <CCardBody>
-              <CButton color="secondary" @click="myModal = true" class="mr-1">
-                Launch demo modal
-              </CButton>
-              <CButton color="secondary" @click="largeModal = true" class="mr-1">
-                Launch large modal
-              </CButton>
-              <CButton color="secondary" @click="smallModal = true" class="mr-1">
-                Launch small modal
-              </CButton>
-              <hr>
               <CButton color="primary" @click="primaryModal = true" class="mr-1">
                 Launch primary modal
-              </CButton>
-              <CButton color="success" @click="successModal = true" class="mr-1">
-                Launch success modal
-              </CButton>
-              <CButton color="warning" @click="warningModal = true" class="mr-1">
-                Launch warning modal
-              </CButton>
-              <CButton color="danger" @click="dangerModal = true" class="mr-1">
-                Launch danger modal
-              </CButton>
-              <CButton color="info" @click="infoModal = true" class="mr-1">
-                Launch info modal
-              </CButton>
-              <CButton color="dark" @click="darkModal = true" class="mr-1">
-                Launch dark modal
               </CButton>
             </CCardBody>
           </CCard>
@@ -54,126 +29,75 @@
     <!-- Modal Component -->
     <CModal
       title="Modal title"
-      :show.sync="myModal"
-      size="xl"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      title="Modal title"
-      size="lg"
-      :show.sync="largeModal"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      title="Modal title"
-      size="sm"
-      :show.sync="smallModal"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-
-    <CModal
-      title="Modal title"
       :show.sync="primaryModal"
       color="primary"
     >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      title="Modal title"
-      color="success"
-      :show.sync="successModal"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      title="Modal title"
-      color="warning"
-      :show.sync="warningModal"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      title="Modal title"
-      color="danger"
-      :show.sync="dangerModal"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      title="Modal title"
-      color="info"
-      :show.sync="infoModal"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </CModal>
-    <CModal
-      :show.sync="darkModal"
-      :no-close-on-backdrop="true"
-      :centered="true"
-      title="Modal title 2"
-      size="lg"
-      color="dark"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      <template #header>
-        <h6 class="modal-title">Custom smaller modal title</h6>
-        <CButtonClose @click="darkModal = false" class="text-white"/>
-      </template>
-      <template #footer>
-        <CButton @click="darkModal = false" color="danger">Discard</CButton>
-        <CButton @click="darkModal = false" color="success">Accept</CButton>
-      </template>
+      <CCard>
+          <CCardHeader>
+            <strong>Basic Form</strong> Elements
+          </CCardHeader>
+          <CCardBody>
+            <CForm>
+              <CInput
+                description="Let us know your full name."
+                label="Enter your name"
+                horizontal
+                autocomplete="name"
+              />
+              <CInput
+                label="Static"
+                value="Username"
+                horizontal
+                plaintext
+              />
+              <CInput
+                label="Text input"
+                description="This is a help text"
+                placeholder="Text"
+                horizontal
+              />
+              <CInput
+                label="Date"
+                type="date"
+                horizontal
+              />
+              <CInput
+                label="Email input"
+                description="Please enter your email"
+                placeholder="Enter your email"
+                type="email"
+                horizontal
+                autocomplete="email"
+              />
+              <CInput
+                label="Password Input"
+                description="Please enter a complex password"
+                placeholder="Enter your password"
+                type="password"
+                horizontal
+                autocomplete="current-password"
+              />
+              <CInput
+                label="Disabled Input"
+                placeholder="Disabled"
+                horizontal
+                disabled
+              />
+              <CTextarea
+                label="Textarea"
+                placeholder="Content..."
+                horizontal
+                rows="9"
+              />
+            </CForm>
+          </CCardBody>
+          <CCardFooter>
+            <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
+            <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Reset</CButton>
+          </CCardFooter>
+        </CCard>
     </CModal>
   </div>
-
 </template>
 
 <script>
