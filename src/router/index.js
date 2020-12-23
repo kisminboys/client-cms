@@ -59,6 +59,10 @@ const User = () => import('@/views/users/User')
 
 // new path import below
 
+const Teachers = () => import('@/views/Teachers/Teachers')
+const Teacher = () => import('@/views/Teachers/Teacher')
+
+
 
 Vue.use(Router)
 
@@ -95,7 +99,23 @@ function configRoutes () {
         {
           path: 'teachers',
           name: 'Teachers',
-          // component:
+          component: {
+            render (c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Teachers',
+              component: Teachers
+            },
+            {
+              path: ':id',
+              name: 'Teacher',
+              component: Teacher
+            }
+          ] 
         },
         {
           path: 'students',
