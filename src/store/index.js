@@ -10,6 +10,7 @@ export default new Vuex.Store({
     sidebarShow: 'responsive',
     sidebarMinimize: false,
     teachers: [],
+    teacher: {},
     students: [],
     subjects: []
   },
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     SET_TEACHERS (state, payload) {
       state.teachers = payload
+    },
+    SET_TEACHER (state, payload) {
+      state.teacher = payload
     },
     SET_STUDENTS (state, payload) {
       state.students = payload
@@ -68,6 +72,23 @@ export default new Vuex.Store({
         console.log(err);
       })
     },
+    fetchTeacherById (context, payload) {
+      console.log(payload);
+      axios({
+        method: 'get',
+        url: `/teachers/${payload}`,
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      })
+      .then(({ data }) => {
+        console.log(data);
+        context.commit('SET_TEACHER', data)
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }, 
     fetchStudents (context, payload) {
       axios({
         method: 'get',

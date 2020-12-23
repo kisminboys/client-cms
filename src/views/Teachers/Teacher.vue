@@ -10,7 +10,7 @@
             striped
             small
             fixed
-            :items="visibleData"
+            :items="teacherData"
             :fields="fields"
           />
         </CCardBody>
@@ -39,7 +39,7 @@ export default {
   computed: {
     fields () {
       return [
-        { key: 'key', label: this.username, _style: 'width:150px'},
+        { key: 'key', label: this.teacher.fullName, _style: 'width:150px'},
         { key: 'value', label: '', _style: 'width:150px;' }
       ]
     },
@@ -50,16 +50,33 @@ export default {
       return userDetails.map(([key, value]) => { return { key, value } })
     },
     visibleData () {
+      console.log(this.userData)
       return this.userData.filter(param => param.key !== 'username')
     },
     username () {
       return this.userData.filter(param => param.key === 'username')[0].value
+    },
+    teacher () {
+      return this.$store.state.teacher
+    },
+    teacherData () {
+      const id = this.$route.params.id
+      // const teacherDetails 
+      const arr = Object.keys(this.teacher)
+      const result = arr.map((e) => {
+        return {key: e, value: this.teacher[e]}
+      })
+      return result.filter( e => !(e.key === 'photo' || e.key === "password"))
     }
   },
   methods: {
     goBack() {
-      this.usersOpened ? this.$router.go(-1) : this.$router.push({path: '/users'})
+      this.usersOpened ? this.$router.go(-1) : this.$router.push({path: '/teachers'})
     }
+  },
+  created () {
+    const id = this.$route.params.id
+    this.$store.dispatch('fetchTeacherById', id)
   }
 }
 </script>
