@@ -63,8 +63,8 @@ const User = () => import('@/views/users/User')
 const Teachers = () => import('@/views/Teachers/Teachers')
 const Teacher = () => import('@/views/Teachers/Teacher')
 // Students
-
-
+const Students = () => import('@/views/Students/Students')
+const Student = () => import('@/views/Students/Student')
 // Subjects
 const Subjects = () => import('@/views/Subjects/Subjects')
 const Subject = () => import('@/views/Subjects/Subject')
@@ -127,7 +127,23 @@ function configRoutes () {
         {
           path: 'students',
           name: 'Students',
-          // component:
+          component: {
+            render (c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Students',
+              component: Students
+            },
+            {
+              path: ':id',
+              name: 'Student',
+              component: Student
+            }
+          ] 
         },
         {
           path: 'subjects',
