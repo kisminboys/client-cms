@@ -2,7 +2,7 @@
   <div class="c-app flex-row align-items-center">
     <CContainer>
       <CRow class="justify-content-center">
-        <CCol md="8">
+        <CCol md="4">
           <CCardGroup>
             <CCard class="p-4">
               <CCardBody>
@@ -27,30 +27,8 @@
                     <CCol col="6" class="text-left">
                       <CButton @click.prevent="doLogin" color="primary" class="px-4">Login</CButton>
                     </CCol>
-                    <CCol col="6" class="text-right">
-                      <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <CButton color="link" class="d-lg-none">Register now!</CButton>
-                    </CCol>
                   </CRow>
                 </CForm>
-              </CCardBody>
-            </CCard>
-            <CCard
-              color="primary"
-              text-color="white"
-              class="text-center py-5 d-md-down-none"
-              body-wrapper
-            >
-              <CCardBody>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <CButton
-                  color="light"
-                  variant="outline"
-                  size="lg" @submit.prevent="doLogin"
-                >
-                  Register Now!
-                </CButton>
               </CCardBody>
             </CCard>
           </CCardGroup>

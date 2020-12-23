@@ -57,6 +57,9 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+// new path import below
+
+
 Vue.use(Router)
 
 const router = new Router({
@@ -88,6 +91,36 @@ function configRoutes () {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'teachers',
+          name: 'Teachers',
+          // component:
+        },
+        {
+          path: 'students',
+          name: 'Students',
+          // component:
+        },
+        {
+          path: 'subjects',
+          name: 'Subjects',
+          // component:
+        },
+        {
+          path: 'classrooms',
+          name: 'Classrooms',
+          // component:
+        },
+        {
+          path: 'exams',
+          name: 'Exams',
+          // component:
+        },
+        {
+          path: 'questions',
+          name: 'Questions',
+          // component:
         },
         {
           path: 'theme',
