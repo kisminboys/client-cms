@@ -542,6 +542,9 @@ export default {
       }
       return $color
     }
+  },
+  created () {
+    console.log(this.$router.history.current)
   }
 }
 </script>

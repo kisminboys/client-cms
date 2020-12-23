@@ -59,15 +59,25 @@ const User = () => import('@/views/users/User')
 
 Vue.use(Router)
 
-export default new Router({
-  mode: 'hash', // https://router.vuejs.org/api/#mode
+const router = new Router({
+  mode: 'history', // https://router.vuejs.org/api/#mode
   linkActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
-  routes: configRoutes()
+  routes: configRoutes(),
+  
 })
-
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = localStorage.getItem('access_token')
+  if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
+  else next()
+})
 function configRoutes () {
   return [
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
     {
       path: '/',
       redirect: '/dashboard',
@@ -115,7 +125,7 @@ function configRoutes () {
             label: 'Users'
           },
           component: {
-            render(c) {
+            render (c) {
               return c('router-view')
             }
           },
@@ -326,11 +336,6 @@ function configRoutes () {
           component: Page500
         },
         {
-          path: 'login',
-          name: 'Login',
-          component: Login
-        },
-        {
           path: 'register',
           name: 'Register',
           component: Register
@@ -340,3 +345,4 @@ function configRoutes () {
   ]
 }
 
+export default router
