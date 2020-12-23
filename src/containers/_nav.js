@@ -35,11 +35,66 @@ export default [
       {
         _name: 'CSidebarNavDropdown',
         name: 'Teachers',
-        icon: 'cil-pencil',
+        icon: 'cil-grid',
         items: [
           {
-            name: 'List',
+            name: 'List Data',
             to: '/teachers'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Students',
+        icon: 'cil-grid',
+        items: [
+          {
+            name: 'List Data',
+            to: '/students'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Subjects',
+        icon: 'cib-stackoverflow',
+        items: [
+          {
+            name: 'List Data',
+            to: '/subjects'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Classrooms',
+        icon: 'cil-grid',
+        items: [
+          {
+            name: 'List Data',
+            to: '/classrooms'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Exams',
+        icon: 'cib-stackoverflow',
+        items: [
+          {
+            name: 'List Data',
+            to: '/exams'
+          }
+        ]
+      },
+      {
+        _name: 'CSidebarNavDropdown',
+        name: 'Questions',
+        icon: 'cib-stackoverflow',
+        items: [
+          {
+            name: 'List Data',
+            to: '/questions'
           }
         ]
       },
