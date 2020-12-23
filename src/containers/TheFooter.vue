@@ -5,8 +5,8 @@
       <span class="ml-1">&copy; {{new Date().getFullYear()}} creativeLabs.</span>
     </div>
     <div class="mfs-auto">
-      <span class="mr-1" target="_blank">Powered by</span>
-      <a href="https://coreui.io/vue">CoreUI for Vue</a>
+      <span class="mr-1" target="_blank">KISMINBOYS©</span>
+      <a href="https://www.lovequotes.com/">with 💓</a>
     </div>
   </CFooter>
 </template>

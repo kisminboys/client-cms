@@ -59,8 +59,15 @@ const User = () => import('@/views/users/User')
 
 // new path import below
 
+// Teachers
 const Teachers = () => import('@/views/Teachers/Teachers')
 const Teacher = () => import('@/views/Teachers/Teacher')
+// Students
+const Students = () => import('@/views/Students/Students')
+const Student = () => import('@/views/Students/Student')
+// Subjects
+const Subjects = () => import('@/views/Subjects/Subjects')
+const Subject = () => import('@/views/Subjects/Subject')
 
 
 
@@ -120,12 +127,44 @@ function configRoutes () {
         {
           path: 'students',
           name: 'Students',
-          // component:
+          component: {
+            render (c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Students',
+              component: Students
+            },
+            {
+              path: ':id',
+              name: 'Student',
+              component: Student
+            }
+          ] 
         },
         {
           path: 'subjects',
           name: 'Subjects',
-          // component:
+          component: {
+            render (c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Subjects',
+              component: Subjects
+            },
+            {
+              path: ':id',
+              name: 'Subject',
+              component: Subject
+            }
+          ]
         },
         {
           path: 'classrooms',
