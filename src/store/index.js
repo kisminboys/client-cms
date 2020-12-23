@@ -25,6 +25,7 @@ export default new Vuex.Store({
   },
   actions: {
     login (context, payload) {
+      console.log(payload);
       axios({
         method: 'POST',
         url: '/admin/login',
